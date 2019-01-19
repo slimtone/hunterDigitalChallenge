@@ -7,9 +7,9 @@ const Routes = () => {
 		return (
 					<Switch>
 						<Route exact path='/' component={Pizza} />
-						<Route exact path='/pizza/:id' component={SinglePizza} />
+						<Route path='/pizza/:id' component={SinglePizza} />
 					</Switch>
-		)
+		);
 }
 
 export default Routes;

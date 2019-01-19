@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card } from 'semantic-ui-react';
+import { Card, Button, Icon } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 
 export default class SinglePizza extends Component {
   constructor(props){
@@ -16,12 +17,23 @@ export default class SinglePizza extends Component {
 	render(){
     let { id } = this.props.match.params;
 		return(
-      <Card
+      <div>
+        <Button as={Link} to={'/'}
+        style={{
+          marginLeft: '5em',
+          marginTop: '2em'
+        }}>
+        <Icon name="left arrow" />
+          Back
+        </Button>
+        <Card
         style={{margin: '5em'}}
         image={this.state.pizzaImgs[id-1]}
         header={this.state.pizzas[id-1]}
         description='Describe the pizza here'
-      />
+        />
+      </div>
 		);
 	}
 }
+
